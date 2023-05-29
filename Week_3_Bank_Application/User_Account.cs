@@ -107,9 +107,9 @@ namespace Week_3_Bank_Application
             {
                 Console.Clear();
                 Console.WriteLine("\n ALLSTAR BANKING APPLICATION\n");
-                Console.WriteLine(" Password must be at least 6 characters");
+                Console.WriteLine("\n\n Password must be at least 6 characters");
                 Console.WriteLine(" Password must contain Upper case, Lower case and special characters");
-                Console.WriteLine(" Enter Password ");
+                Console.WriteLine(" Create Password ");
                 User_Password = Console.ReadLine();
                 Console.Clear();
             } while (!Regex.IsMatch(User_Password, passwordPattern));
