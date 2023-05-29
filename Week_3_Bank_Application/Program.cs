@@ -10,7 +10,7 @@ namespace Week_3_Bank_Application
     {
         static void Main(string[] args)
         {
-            User_Account newUser = new User_Account();
+            User_Registration newUser = new User_Registration();
             newUser.User_SignUp();
         }
     }
