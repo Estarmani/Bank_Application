@@ -7,8 +7,7 @@ using System.Threading.Tasks;
 
 namespace Week_3_Bank_Application
 {
-    public class User_Login : User_Registration
-    {
+    public class User_Login : User_Account    {
         bool IsValue;
         public void ApprovedLogin()
         {
