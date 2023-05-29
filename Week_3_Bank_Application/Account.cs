@@ -8,5 +8,7 @@ namespace Week_3_Bank_Application
 {
     internal class Account
     {
+        public string option;
+        public string AccountType;
     }
 }
