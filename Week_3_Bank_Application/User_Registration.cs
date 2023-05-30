@@ -33,7 +33,7 @@ namespace Week_3_Bank_Application
             bool isValid;
             do
             {
-                Console.WriteLine("\n ALLSTAR BANKING APPLICATION\n");
+                Console.WriteLine("\n                                  ALLSTAR BANKING APPLICATION\n                          ");
                 Console.WriteLine("\n 1: Sign Up\n 2: Login\n 3: Exit\n");
                 Console.WriteLine(" Select any number to begin ");
                 Option = Console.ReadLine();
@@ -73,7 +73,7 @@ namespace Week_3_Bank_Application
             do
             {
                 Console.Clear();
-                Console.WriteLine("\n ALLSTAR BANKING APPLICATION\n");
+                Console.WriteLine("\n                                ALLSTAR BANKING APPLICATION\n                       ");
                 Console.WriteLine("\n Enter First Name: \n");
                 User_FirstName = Console.ReadLine();
             } while (!Regex.IsMatch(User_FirstName, namePattern));
@@ -83,8 +83,6 @@ namespace Week_3_Bank_Application
         {
             do
             {
-                Console.Clear();
-                Console.WriteLine("\n ALLSTAR BANKING APPLICATION\n");
                 Console.Write("\n Enter Last Name: ");
                 User_LastName = Console.ReadLine();
 
@@ -95,7 +93,7 @@ namespace Week_3_Bank_Application
             do
             {
                 Console.Clear();
-                Console.WriteLine("\n ALLSTAR BANKING APPLICATION\n");
+                Console.WriteLine("\n                               ALLSTAR BANKING APPLICATION\n                        ");
                 Console.WriteLine("\n Enter Email address ");
                 User_Email = Console.ReadLine();
 
@@ -105,10 +103,8 @@ namespace Week_3_Bank_Application
         {
             do
             {
-                Console.Clear();
-                Console.WriteLine("\n ALLSTAR BANKING APPLICATION\n");
                 Console.WriteLine("\n\n Password must be at least 6 characters");
-                Console.WriteLine(" Password must contain Upper case, Lower case and special characters");
+                Console.WriteLine(" Password must contain Upper case, Lower case and special characters\n\n");
                 Console.WriteLine(" Create Password ");
                 User_Password = Console.ReadLine();
                 Console.Clear();

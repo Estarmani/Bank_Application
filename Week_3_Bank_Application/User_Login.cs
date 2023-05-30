@@ -20,11 +20,13 @@ namespace Week_3_Bank_Application
            if (e == User_Email && p == User_Password)
            {
                 Console.WriteLine("Login Successful");
+                Console.Clear();
                 Menu newMenu = new Menu();
                 newMenu.Main_Menu();
            }
             else
             {
+
                 Console.WriteLine(" Email or Password incorrect.");
                 
 
