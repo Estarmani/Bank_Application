@@ -7,7 +7,8 @@ using System.Threading.Tasks;
 
 namespace Week_3_Bank_Application
 {
-    public class User_Login : User_Account    {
+    public class User_Login : User_Account 
+    { 
         bool IsValue;
         public void ApprovedLogin()
         {
@@ -19,11 +20,13 @@ namespace Week_3_Bank_Application
            if (e == User_Email && p == User_Password)
            {
                 Console.WriteLine("Login Successful");
+                Menu newMenu = new Menu();
+                newMenu.Main_Menu();
            }
             else
             {
-                Console.WriteLine(" Email or Password incorrect, try again");
-
+                Console.WriteLine(" Email or Password incorrect.");
+                
 
             }
         }

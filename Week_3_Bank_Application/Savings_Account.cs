@@ -10,6 +10,7 @@ namespace Week_3_Bank_Application
     internal class Savings_Account
     {
         public static int savingsAccount;
+        public static int currentAccount;
         public void Savings()
         {
             Random newRandom = new Random();

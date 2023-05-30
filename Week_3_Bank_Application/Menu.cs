@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Week_3_Bank_Application
 {
-    internal class Menu
+    public class Menu
     {
         internal string option;
         public void Main_Menu()
