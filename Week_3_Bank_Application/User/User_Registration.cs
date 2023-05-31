@@ -26,9 +26,9 @@ namespace Bank_Application
             bool isValid;
             do
             {
-                Console.WriteLine("\n                                  ALLSTAR BANKING APPLICATION\n                          ");
+                Console.WriteLine("\n                          ALLSTAR BANKING APPLICATION\n                          ");
                 Console.WriteLine("\n 1: Sign Up\n 2: Login\n 3: Exit\n");
-                Console.WriteLine(" Select any number to begin ");
+                Console.WriteLine("Select any number to begin ");
                 Option = Console.ReadLine();
                 Console.Clear();
 
@@ -66,7 +66,7 @@ namespace Bank_Application
             do
             {
                 Console.Clear();
-                Console.WriteLine("\n                                ALLSTAR BANKING APPLICATION\n                       ");
+                Console.WriteLine("\n                         ALLSTAR BANKING APPLICATION\n                       ");
                 Console.Write("\n Enter First Name: ");
                 var name = Console.ReadLine();
                 User_FirstName = name;
@@ -89,7 +89,7 @@ namespace Bank_Application
             do
             {
                 Console.Clear();
-                Console.WriteLine("\n                               ALLSTAR BANKING APPLICATION\n                        ");
+                Console.WriteLine("\n                         ALLSTAR BANKING APPLICATION\n                        ");
                 Console.Write(" Enter Email address: ");
                 var email = Console.ReadLine();
                 User_Email += email;

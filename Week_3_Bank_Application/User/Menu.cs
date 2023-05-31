@@ -11,14 +11,15 @@ namespace Bank_Application
         internal string option;
         public void Main_Menu()
         {
+            Console.WriteLine("\n                         ALLSTAR BANKING APPLICATION                       ");
             Console.WriteLine("\n 1: Creat Account\n 2: Check Balance\n 3: Deposit\n 4: Withdrawal");
-            Console.WriteLine("5: Transfer\n 6: Account Details\n 7: Account Statement");
+            Console.WriteLine(" 5: Transfer\n 6: Account Details\n 7: Account Statement");
             option = Console.ReadLine().Trim();
 
             if (option == "1")
             {
-                Console.WriteLine("\n 1: Savings Account\n 2: Current");
-                var option = Console.ReadLine().Trim();
+                CreateAccount newAccount = new CreateAccount();
+                newAccount.AccountChoice();
 
             }
             else if (option == "2")
