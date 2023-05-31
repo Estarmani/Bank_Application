@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Week_3_Bank_Application
+namespace Bank_Application
 {
     public class Menu
     {
@@ -17,6 +17,8 @@ namespace Week_3_Bank_Application
 
             if (option == "1")
             {
+                Console.WriteLine("\n 1: Savings Account\n 2: Current");
+                var option = Console.ReadLine().Trim();
 
             }
             else if (option == "2")

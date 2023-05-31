@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Week_3_Bank_Application
+namespace Bank_Application
 {
-    internal class Account
+    internal class Account_Transaction
     {
-        public string option;
-        public string AccountType;
+ 
+
     }
 }

@@ -5,31 +5,30 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
-namespace Week_3_Bank_Application
+namespace Bank_Application
 {
-    public class User_Login : User_Account 
+    public class User_Login : User_Account
+        
     { 
         bool IsValue;
         public void ApprovedLogin()
         {
-            Console.WriteLine("\n Enter your Email: ");
+            Console.Write("\n Enter your Email: ");
             var e = Console.ReadLine();
-            Console.WriteLine("\n Enter your Password: ");
+            Console.Write("\n Enter your Password: ");
             var p = Console.ReadLine();
 
-           if (e == User_Email && p == User_Password)
-           {
+            if (e == User_Email && p == User_Password)
+            {
                 Console.WriteLine("Login Successful");
-                Console.Clear();
+                //Console.Clear();
                 Menu newMenu = new Menu();
                 newMenu.Main_Menu();
-           }
+            }
             else
             {
 
-                Console.WriteLine(" Email or Password incorrect.");
-                
-
+                // Console.WriteLine(" Email or Password incorrect.");
             }
         }
     }

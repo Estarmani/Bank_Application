@@ -5,27 +5,20 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
-namespace Week_3_Bank_Application
+namespace Bank_Application
 {
-    public class User_Account
+     public class User_Account
     {
-        static string Option;
-        public static string User_FirstName;
-        public static string User_LastName;
-        public static string User_Email; 
-        public static string User_Password;
+        static string Option = "";
+        public static string User_FirstName = "";
+        public static string User_LastName = "";
+        public static string User_Email = ""; 
+        public static string User_Password = "";
         public readonly string passwordPattern = @"^(?=.*[a-zA-Z0-9])(?=.*[@#$%^&+=])(?=.{6,})";
         public readonly string emailPattern = @"^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$";
         public readonly string namePattern = @"^[A-Z][a-zA-Z]*$";
         
-        public User_Account()
-        {
-            User_FirstName = default;
-            User_LastName = default;
-            User_Email = default;
-            User_Password = default;
-            Option = "";
-        }
+        
 
         public void User_SignUp()
         {
@@ -74,8 +67,10 @@ namespace Week_3_Bank_Application
             {
                 Console.Clear();
                 Console.WriteLine("\n                                ALLSTAR BANKING APPLICATION\n                       ");
-                Console.WriteLine("\n Enter First Name: \n");
-                User_FirstName = Console.ReadLine();
+                Console.Write("\n Enter First Name: ");
+                var name = Console.ReadLine();
+                User_FirstName = name;
+
             } while (!Regex.IsMatch(User_FirstName, namePattern));
 
         }
@@ -84,7 +79,8 @@ namespace Week_3_Bank_Application
             do
             {
                 Console.Write("\n Enter Last Name: ");
-                User_LastName = Console.ReadLine();
+                var name = Console.ReadLine();
+                User_LastName = name;
 
             } while (!Regex.IsMatch(User_LastName, namePattern));
         }
@@ -94,8 +90,9 @@ namespace Week_3_Bank_Application
             {
                 Console.Clear();
                 Console.WriteLine("\n                               ALLSTAR BANKING APPLICATION\n                        ");
-                Console.WriteLine("\n Enter Email address ");
-                User_Email = Console.ReadLine();
+                Console.Write(" Enter Email address: ");
+                var email = Console.ReadLine();
+                User_Email += email;
 
             } while (!Regex.IsMatch(User_Email, emailPattern));
         }
@@ -103,10 +100,11 @@ namespace Week_3_Bank_Application
         {
             do
             {
-                Console.WriteLine("\n\n Password must be at least 6 characters");
-                Console.WriteLine(" Password must contain Upper case, Lower case and special characters\n\n");
-                Console.WriteLine(" Create Password ");
-                User_Password = Console.ReadLine();
+                Console.WriteLine(" Password must be at least 6 characters");
+                Console.WriteLine(" Password must contain Upper case, Lower case and special characters\n");
+                Console.Write(" Create Password ");
+                var password = Console.ReadLine();
+                User_Password += password;
                 Console.Clear();
             } while (!Regex.IsMatch(User_Password, passwordPattern));
         }
