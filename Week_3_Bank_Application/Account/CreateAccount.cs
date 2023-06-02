@@ -18,7 +18,7 @@ namespace Bank_Application.Account
 
 
 
-        public int AccType()
+        public string AccType()
         {
 
             
@@ -33,9 +33,11 @@ namespace Bank_Application.Account
                 Console.Clear();
                 accountType = "savings";
                 Random newAccount = new Random();
-                accNo = newAccount.Next(0000000000, 0999999999);
+                accNo = newAccount.Next(0000000000, 1999999999);
+                string result = "0" + accNo.ToString();
                 Console.WriteLine("\nSavings Account created successfully");
-                return accNo;
+                Console.WriteLine(result);
+                return result;
             }
             else if (option == "2")
             {
@@ -43,14 +45,16 @@ namespace Bank_Application.Account
                 accountType = "current";
                 Random newAccount = new Random();
                 accNo = newAccount.Next(1000000000, 1999999999);
+                string result = "0" + accNo.ToString();
                 Console.WriteLine("\nCurrent Account created successfully"); 
-                return accNo;
+                Console.WriteLine(result);
+                return result;
             }
             else
             {
                 AccType();
             }
-            return accNo;
+            return string.Empty;
         }
        
  

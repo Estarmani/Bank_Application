@@ -18,7 +18,7 @@ namespace Bank_Application.User
             Console.Write("\n Enter your Password: ");
             var p = Console.ReadLine();
 
-            if (e == User_Email && p == User_Password)
+            if (e == customer.Email && p == customer.Password)
             {
                 Console.WriteLine("Login Successful");
                 Console.Clear();

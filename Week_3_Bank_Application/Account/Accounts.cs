@@ -6,20 +6,16 @@ using System.Threading.Tasks;
 
 namespace Week_3_Bank_Application.Account
 {
-    internal class Accounts
+    public class Accounts
     {
-        public string Account_type{ get; set; }
+        
+        public AccountType accountType{ get; set; }
         public string AccountNo { get; set; }
-        public string AccountBal { get; set;}
-        public int CustomerID { get; set; }
-
-        public Accounts(string account_type, string accountNo, string accountBal, int customerID)
-        {
-            this.Account_type = account_type;
-            this.AccountNo = accountNo;
-            this.AccountBal = accountBal;
-            this.CustomerID = customerID;
-        }
+        public decimal AccountBal { get; set;}
+     
     }
-       
+       public enum AccountType
+    {
+        savings = 1, current = 2
+    }
 }

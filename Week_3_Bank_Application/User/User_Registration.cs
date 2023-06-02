@@ -12,14 +12,10 @@ namespace Bank_Application.User
     
      public class User_Account
     {
-        public static List<Customer> customers = new List<Customer>();
+        public static Customer customer = new Customer();
 
         static string Option = "";
-        public static string User_FirstName = "";
-        public static string User_LastName = "";
-        public static string User_Email = ""; 
-        public static string User_Password = "";
-        public static string User_ID = "";
+    
         public readonly string passwordPattern = @"^(?=.*[a-zA-Z0-9])(?=.*[@#$%^&+=])(?=.{6,})";
         public readonly string emailPattern = @"^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$";
         public readonly string namePattern = @"^[A-Z][a-zA-Z]*$";
@@ -46,8 +42,6 @@ namespace Bank_Application.User
                     Email();
                     Password();
                     CustomerId();
-                    Customer customer = new Customer(User_FirstName, User_LastName, User_Email, User_Password, User_ID);
-                    customers.Add(customer);
                     Console.WriteLine("Registration successful");
                     print();
 
@@ -82,9 +76,9 @@ namespace Bank_Application.User
                 Console.WriteLine("\n                         ALLSTAR BANKING APPLICATION\n                       ");
                 Console.Write("\n Enter First Name: ");
                 var name = Console.ReadLine();
-                User_FirstName = name;
+                customer.FirstName = name;
 
-            } while (!Regex.IsMatch(User_FirstName, namePattern));
+            } while (!Regex.IsMatch(customer.FirstName, namePattern));
 
         }
         public void LastName()
@@ -93,9 +87,9 @@ namespace Bank_Application.User
             {
                 Console.Write("\n Enter Last Name: ");
                 var name = Console.ReadLine();
-                User_LastName = name;
+                customer.LastName = name;
 
-            } while (!Regex.IsMatch(User_LastName, namePattern));
+            } while (!Regex.IsMatch(customer.LastName, namePattern));
         }
         public void Email()
         {
@@ -105,21 +99,21 @@ namespace Bank_Application.User
                 Console.WriteLine("\n                         ALLSTAR BANKING APPLICATION\n                        ");
                 Console.Write(" Enter Email address: ");
                 var email = Console.ReadLine();
-                User_Email += email;
+                customer.Email += email;
 
-            } while (!Regex.IsMatch(User_Email, emailPattern));
+            } while (!Regex.IsMatch(customer.Email, emailPattern));
         }
         public void Password()
         {
             do
             {
                 Console.WriteLine(" Password must be at least 6 characters");
-                Console.WriteLine(" Password must contain Upper case, Lower case and special characters\n");
-                Console.Write(" Create Password ");
+                Console.WriteLine(" Password must contain Upper case, Lower case and special characters\n\n\n");
+                Console.Write(" Create Password: ");
                 var password = Console.ReadLine();
-                User_Password += password;
+                customer.Password += password;
                 Console.Clear();
-            } while (!Regex.IsMatch(User_Password, passwordPattern));
+            } while (!Regex.IsMatch(customer.Password, passwordPattern));
         }
 
 
@@ -128,23 +122,15 @@ namespace Bank_Application.User
         {
             Random newID = new Random();
             int i = newID.Next(5000, 5999);
-            User_ID = i.ToString();
-            return User_ID;
+            customer.CustomerID = i.ToString();
+            return customer.CustomerID;
         }
         
 
         public void print()
         {
 
-            foreach (var item in customers)
-            {
-                Console.WriteLine($"ID: {item.customerID}");
-                Console.WriteLine($"Firstname: {item.firstName}");
-                Console.WriteLine($"Lastname: {item.lastName}");
-                Console.WriteLine($"email: {item.email}");
-                Console.WriteLine($"password: {item.password}");
-                
-            }
+           
         }
 
         

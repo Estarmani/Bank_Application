@@ -29,11 +29,13 @@ namespace Bank_Application.User
             }
             else if (option == "3")
             {
-
+                Account_Transaction transaction = new Account_Transaction();
+                transaction.Deposit();
             }
             else if (option == "4")
             {
-
+                Account_Transaction transaction2 = new Account_Transaction();
+                transaction2.Withdrawal();
             }
             else if (option == "5")
             {
