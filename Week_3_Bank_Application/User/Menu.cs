@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Bank_Application.Account;
 
-namespace Bank_Application
+namespace Bank_Application.User
 {
     public class Menu
     {

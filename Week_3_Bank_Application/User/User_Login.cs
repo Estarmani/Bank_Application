@@ -5,12 +5,12 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
-namespace Bank_Application
+namespace Bank_Application.User
 {
     public class User_Login : User_Account
         
     { 
-        bool IsValue;
+        
         public void ApprovedLogin()
         {
             Console.Write("\n Enter your Email: ");

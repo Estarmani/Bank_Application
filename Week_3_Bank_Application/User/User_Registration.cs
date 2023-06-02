@@ -4,16 +4,22 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using Bank_Application.Account;
+using Week_3_Bank_Application.User;
 
-namespace Bank_Application
+namespace Bank_Application.User
 {
+    
      public class User_Account
     {
+        public static List<Customer> customers = new List<Customer>();
+
         static string Option = "";
         public static string User_FirstName = "";
         public static string User_LastName = "";
         public static string User_Email = ""; 
         public static string User_Password = "";
+        public static int User_ID;
         public readonly string passwordPattern = @"^(?=.*[a-zA-Z0-9])(?=.*[@#$%^&+=])(?=.{6,})";
         public readonly string emailPattern = @"^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$";
         public readonly string namePattern = @"^[A-Z][a-zA-Z]*$";
@@ -39,6 +45,10 @@ namespace Bank_Application
                     LastName();
                     Email();
                     Password();
+                    Customer customer = new Customer(User_FirstName, User_LastName, User_Email, User_Password, User_ID);
+                    customers.Add(customer);
+                    Console.WriteLine("Registration successful");
+
                 }
                 else if (Option == "2")
                 {
@@ -49,7 +59,8 @@ namespace Bank_Application
                 else if (Option == "3")
                 {
                     isValid = true;
-                    Console.WriteLine();
+                    User_logout log_out = new User_logout();
+                    log_out.LogOutUser();
                 }
                 else
                 {
@@ -108,5 +119,32 @@ namespace Bank_Application
                 Console.Clear();
             } while (!Regex.IsMatch(User_Password, passwordPattern));
         }
+
+        public void ACCNo()
+        {
+            CreateAccount createaccount = new CreateAccount();
+            int AccountNumber = createaccount.AccountChoice();
+            
+        }
+        public void AccT()
+        {
+            CreateAccount createaccount = new CreateAccount();
+            string AccType = createaccount.TypeOfAccount();
+        }
+        public void print()
+        {
+
+            foreach (var item in customers)
+            {
+                Console.WriteLine($"Firstname: {item.firstName}");
+                Console.WriteLine($"Lastname: {item.lastName}");
+                Console.WriteLine($"AccountType: {item.email}");
+                Console.WriteLine($"AccountNo: {item.password}");
+                
+            }
+        }
+
+        
     }
+   
 }

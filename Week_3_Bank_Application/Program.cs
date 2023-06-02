@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Bank_Application
+namespace Bank_Application.User
 {
     internal class Program
     {
