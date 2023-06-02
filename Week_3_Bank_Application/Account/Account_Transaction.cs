@@ -8,7 +8,6 @@ namespace Bank_Application
 {
     internal class Account_Transaction
     {
- 
 
     }
 }

@@ -10,7 +10,7 @@ namespace Week_3_Bank_Application.User
     {
         public void LogOutUser()
         {
-            Console.WriteLine("Thanks for banking with us.");
+            Console.WriteLine("Thanks for banking with us.\n\n");
             Environment.Exit(0);
         }
     }

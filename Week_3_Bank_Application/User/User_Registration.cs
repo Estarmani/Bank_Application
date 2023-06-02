@@ -19,7 +19,7 @@ namespace Bank_Application.User
         public static string User_LastName = "";
         public static string User_Email = ""; 
         public static string User_Password = "";
-        public static int User_ID;
+        public static string User_ID = "";
         public readonly string passwordPattern = @"^(?=.*[a-zA-Z0-9])(?=.*[@#$%^&+=])(?=.{6,})";
         public readonly string emailPattern = @"^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$";
         public readonly string namePattern = @"^[A-Z][a-zA-Z]*$";
@@ -45,9 +45,11 @@ namespace Bank_Application.User
                     LastName();
                     Email();
                     Password();
+                    CustomerId();
                     Customer customer = new Customer(User_FirstName, User_LastName, User_Email, User_Password, User_ID);
                     customers.Add(customer);
                     Console.WriteLine("Registration successful");
+                    print();
 
                 }
                 else if (Option == "2")
@@ -120,26 +122,27 @@ namespace Bank_Application.User
             } while (!Regex.IsMatch(User_Password, passwordPattern));
         }
 
-        public void ACCNo()
+
+
+        public string CustomerId()
         {
-            CreateAccount createaccount = new CreateAccount();
-            int AccountNumber = createaccount.AccountChoice();
-            
+            Random newID = new Random();
+            int i = newID.Next(5000, 5999);
+            User_ID = i.ToString();
+            return User_ID;
         }
-        public void AccT()
-        {
-            CreateAccount createaccount = new CreateAccount();
-            string AccType = createaccount.TypeOfAccount();
-        }
+        
+
         public void print()
         {
 
             foreach (var item in customers)
             {
+                Console.WriteLine($"ID: {item.customerID}");
                 Console.WriteLine($"Firstname: {item.firstName}");
                 Console.WriteLine($"Lastname: {item.lastName}");
-                Console.WriteLine($"AccountType: {item.email}");
-                Console.WriteLine($"AccountNo: {item.password}");
+                Console.WriteLine($"email: {item.email}");
+                Console.WriteLine($"password: {item.password}");
                 
             }
         }

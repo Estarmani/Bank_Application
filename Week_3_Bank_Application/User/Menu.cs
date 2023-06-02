@@ -20,7 +20,7 @@ namespace Bank_Application.User
             if (option == "1")
             {
                 CreateAccount newAccount = new CreateAccount();
-                newAccount.AccountChoice();
+                newAccount.AccType();
 
             }
             else if (option == "2")

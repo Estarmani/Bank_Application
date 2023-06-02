@@ -12,10 +12,10 @@ namespace Week_3_Bank_Application.User
         public string lastName;
         public string email;
         public string password;
-        public int customerID;
+        public string customerID;
          
 
-        public Customer(string firstName, string lastName, string email, string password, int customerID)
+        public Customer(string firstName, string lastName, string email, string password, string customerID)
         {
             this.firstName = firstName;
             this.lastName = lastName;

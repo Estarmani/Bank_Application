@@ -12,32 +12,16 @@ namespace Bank_Application.Account
     internal class CreateAccount
     {
         string option { get; set; }
-        static int Account_No;
-        static string AccountType;
+        string accountType = "";
+        int accNo = 0;
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        public int AccountChoice()
+        public int AccType()
         {
 
+            
             Console.Clear();
             Console.WriteLine("\n                          ALLSTAR BANKING APPLICATION          ");
             Console.WriteLine("\n 1: Savings Account\n 2: Current");
@@ -47,45 +31,29 @@ namespace Bank_Application.Account
             if (option == "1")
             {
                 Console.Clear();
+                accountType = "savings";
                 Random newAccount = new Random();
-                Account_No = newAccount.Next(300000000, 888888888);
+                accNo = newAccount.Next(0000000000, 0999999999);
                 Console.WriteLine("\nSavings Account created successfully");
-
+                return accNo;
             }
             else if (option == "2")
             {
                 Console.Clear();
+                accountType = "current";
                 Random newAccount = new Random();
-                Account_No = newAccount.Next(1000000000, 2099999999);
-
-                Console.WriteLine("\nCurrent Account created successfully");
-                Console.WriteLine(" Would you like to create another account? Y/N");
+                accNo = newAccount.Next(1000000000, 1999999999);
+                Console.WriteLine("\nCurrent Account created successfully"); 
+                return accNo;
             }
             else
             {
-                AccountChoice();
+                AccType();
             }
-            return Account_No;
+            return accNo;
         }
-
-       public string TypeOfAccount()
-        {
-            if (option == "1")
-            {
-                return "Savings Account";
-            }
-            else if (option == "2")
-            {
-                return "Current Account";
-            }
-            else
-            {
-                
-                return "Invalid Choice, Enter either 1 or 2";
-            }
-        }
-
        
-        
+ 
+         
     }
 }

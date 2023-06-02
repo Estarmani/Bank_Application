@@ -13,9 +13,9 @@ namespace Week_3_Bank_Application.Account
         public string AccountBal { get; set;}
         public int CustomerID { get; set; }
 
-        public Accounts(string account_tpe, string accountNo, string accountBal, int customerID)
+        public Accounts(string account_type, string accountNo, string accountBal, int customerID)
         {
-            this.Account_type = account_tpe;
+            this.Account_type = account_type;
             this.AccountNo = accountNo;
             this.AccountBal = accountBal;
             this.CustomerID = customerID;
