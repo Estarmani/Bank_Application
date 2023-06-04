@@ -9,11 +9,12 @@ using Bank_Application.User;
 
 namespace Bank_Application.Account
 {
-    internal class CreateAccount
+    public class CreateAccount
     {
         string option { get; set; }
         string accountType = "";
         int accNo = 0;
+        public static List<Accounts> accounts = new List<Accounts>();
 
 
 
@@ -23,7 +24,7 @@ namespace Bank_Application.Account
 
             
             Console.Clear();
-            Console.WriteLine("\n                          ALLSTAR BANKING APPLICATION          ");
+            Console.WriteLine("\n                          ALLSTAR BANKING APPLICATION          \n");
             Console.WriteLine("\n 1: Savings Account\n 2: Current");
             Console.WriteLine("\n Select any number to create an account \n");
             option = Console.ReadLine();
@@ -31,23 +32,41 @@ namespace Bank_Application.Account
             if (option == "1")
             {
                 Console.Clear();
-                accountType = "savings";
                 Random newAccount = new Random();
                 accNo = newAccount.Next(0000000000, 1999999999);
                 string result = "0" + accNo.ToString();
+                var account = new Accounts
+                {
+                    AccountBal = 1000,
+                    AccountNo = result,
+                    accountType = AccountType.savings
+                };
+                accounts.Add(account);
                 Console.WriteLine("\nSavings Account created successfully");
                 Console.WriteLine(result);
+                Menu menu = new Menu();
+                menu.MainMenu();
                 return result;
+               
             }
             else if (option == "2")
             {
                 Console.Clear();
-                accountType = "current";
+               
                 Random newAccount = new Random();
                 accNo = newAccount.Next(1000000000, 1999999999);
-                string result = "0" + accNo.ToString();
+                string result = "1" + accNo.ToString();
+                var account = new Accounts
+                {
+                    AccountBal = 0,
+                    AccountNo = result,
+                    accountType = AccountType.current
+                };
+                accounts.Add(account);
                 Console.WriteLine("\nCurrent Account created successfully"); 
                 Console.WriteLine(result);
+                Menu menu = new Menu();
+                menu.MainMenu();
                 return result;
             }
             else
@@ -55,6 +74,7 @@ namespace Bank_Application.Account
                 AccType();
             }
             return string.Empty;
+          
         }
        
  

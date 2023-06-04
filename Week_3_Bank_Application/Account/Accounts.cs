@@ -9,12 +9,13 @@ namespace Week_3_Bank_Application.Account
     public class Accounts
     {
         
-        public AccountType accountType{ get; set; }
+        public  AccountType accountType{ get; set; }
         public string AccountNo { get; set; }
         public decimal AccountBal { get; set;}
+ 
      
     }
-       public enum AccountType
+    public enum AccountType
     {
         savings = 1, current = 2
     }

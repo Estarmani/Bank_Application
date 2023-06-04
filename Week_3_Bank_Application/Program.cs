@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Week_3_Bank_Application.Account_Information;
 
 namespace Bank_Application.User
 {
@@ -11,7 +12,10 @@ namespace Bank_Application.User
         static void Main(string[] args)
         {
             User_Account newUser = new User_Account();
-            newUser.User_SignUp();
+            newUser.UserSignUp();
+
+           // PrintTable printTable = new PrintTable();
+            //printTable.AccountDetailsTable();
         }
     }
 }

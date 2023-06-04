@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Week_3_Bank_Application.User
 {
-    internal class User_logout
+    internal class Userlogout
     {
         public void LogOutUser()
         {

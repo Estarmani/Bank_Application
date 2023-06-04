@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -7,22 +8,22 @@ using System.Threading.Tasks;
 using Bank_Application.Account;
 using Week_3_Bank_Application.User;
 
-namespace Bank_Application.User
+namespace Bank_Application
 {
     
-     public class User_Account
+    public class User_Account : Customer
     {
-        public static Customer customer = new Customer();
+        public static Week_3_Bank_Application.User.Customer customer = new Week_3_Bank_Application.User.Customer();
 
         static string Option = "";
-    
+     
         public readonly string passwordPattern = @"^(?=.*[a-zA-Z0-9])(?=.*[@#$%^&+=])(?=.{6,})";
         public readonly string emailPattern = @"^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$";
         public readonly string namePattern = @"^[A-Z][a-zA-Z]*$";
         
         
 
-        public void User_SignUp()
+        public void UserSignUp()
         {
 
             bool isValid;
@@ -43,25 +44,24 @@ namespace Bank_Application.User
                     Password();
                     CustomerId();
                     Console.WriteLine("Registration successful");
-                    print();
 
                 }
                 else if (Option == "2")
                 {
                     isValid = true;
-                    User_Login user_Login = new User_Login();
+                    User.User_Login user_Login = new User.User_Login();
                     user_Login.ApprovedLogin();
                 }
                 else if (Option == "3")
                 {
                     isValid = true;
-                    User_logout log_out = new User_logout();
+                    Userlogout log_out = new Userlogout();
                     log_out.LogOutUser();
                 }
                 else
                 {
                     isValid = false;
-                    User_SignUp();
+                    UserSignUp();
                 }
             } while (isValid);
 
@@ -76,9 +76,9 @@ namespace Bank_Application.User
                 Console.WriteLine("\n                         ALLSTAR BANKING APPLICATION\n                       ");
                 Console.Write("\n Enter First Name: ");
                 var name = Console.ReadLine();
-                customer.FirstName = name;
+                Customer.FirstName = name;
 
-            } while (!Regex.IsMatch(customer.FirstName, namePattern));
+            } while (!Regex.IsMatch(Customer.FirstName, namePattern));
 
         }
         public void LastName()
@@ -87,9 +87,9 @@ namespace Bank_Application.User
             {
                 Console.Write("\n Enter Last Name: ");
                 var name = Console.ReadLine();
-                customer.LastName = name;
+                Customer.LastName = name;
 
-            } while (!Regex.IsMatch(customer.LastName, namePattern));
+            } while (!Regex.IsMatch(Customer.LastName, namePattern));
         }
         public void Email()
         {
@@ -99,21 +99,23 @@ namespace Bank_Application.User
                 Console.WriteLine("\n                         ALLSTAR BANKING APPLICATION\n                        ");
                 Console.Write(" Enter Email address: ");
                 var email = Console.ReadLine();
-                customer.Email += email;
+                Customer.Email += email;
 
-            } while (!Regex.IsMatch(customer.Email, emailPattern));
+            } while (!Regex.IsMatch(Customer.Email, emailPattern));
         }
         public void Password()
         {
             do
             {
+                Console.Clear();
                 Console.WriteLine(" Password must be at least 6 characters");
                 Console.WriteLine(" Password must contain Upper case, Lower case and special characters\n\n\n");
                 Console.Write(" Create Password: ");
                 var password = Console.ReadLine();
-                customer.Password += password;
-                Console.Clear();
-            } while (!Regex.IsMatch(customer.Password, passwordPattern));
+                Customer.Password += password;
+                Console.Clear ();
+        
+            } while (!Regex.IsMatch(Customer.Password, passwordPattern));
         }
 
 
@@ -122,18 +124,9 @@ namespace Bank_Application.User
         {
             Random newID = new Random();
             int i = newID.Next(5000, 5999);
-            customer.CustomerID = i.ToString();
-            return customer.CustomerID;
+            Customer.CustomerID = i.ToString();
+            return Customer.CustomerID;
         }
-        
-
-        public void print()
-        {
-
-           
-        }
-
-        
     }
    
 }
