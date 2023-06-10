@@ -13,7 +13,7 @@ namespace Bank_Application
     
     public class User_Account : Customer
     {
-        public static Week_3_Bank_Application.User.Customer customer = new Week_3_Bank_Application.User.Customer();
+        //public static Week_3_Bank_Application.User.Customer customer = new Week_3_Bank_Application.User.Customer();
 
         static string Option = "";
      
@@ -30,7 +30,7 @@ namespace Bank_Application
             do
             {
                 Console.WriteLine("\n                          ALLSTAR BANKING APPLICATION\n                          ");
-                Console.WriteLine("\n 1: Sign Up\n 2: Login\n 3: Exit\n");
+                Console.WriteLine("\n 1: Sign Up\n 2: Login\n 3: Logout\n");
                 Console.WriteLine("Select any number to begin ");
                 Option = Console.ReadLine();
                 Console.Clear();

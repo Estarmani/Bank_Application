@@ -13,23 +13,16 @@ namespace Bank_Application
 {
     public class Account_Transaction : CreateAccount
     {
-        decimal depositAmount;
-        string depositAccount;
-        string withdrawalAccount;
-        decimal withdawalAmount;
-        string accountToTranferTo;
-        string accoutToTranferFrom;
-        decimal transferAmount;
-
+ 
         public void Deposit()
         {
             Console.Clear();
             Console.Write("\nEnter account to deposit: \n");
-            depositAccount = Console.ReadLine();
+            var depositAccount = Console.ReadLine();
             var account = accounts.FirstOrDefault(x => x.AccountNo == depositAccount);
           
             Console.Write("Enter amount to deposit: ");
-            depositAmount = decimal.Parse(Console.ReadLine());
+            var depositAmount = decimal.Parse(Console.ReadLine());
             if (account == null)
             {
                 Console.WriteLine("Account does not exist.");
@@ -50,10 +43,10 @@ namespace Bank_Application
         {
             Console.Clear();
             Console.Write("Enter account to withdraw from: \n");
-            withdrawalAccount = Console.ReadLine();
+            var withdrawalAccount = Console.ReadLine();
             var account = accounts.Where(x => x.AccountNo == withdrawalAccount ).FirstOrDefault();
             Console.Write("Enter amount to withdraw: ");
-            withdawalAmount = decimal.Parse(Console.ReadLine());
+            var withdawalAmount = decimal.Parse(Console.ReadLine());
 
             if (account == null)
             {
@@ -78,15 +71,15 @@ namespace Bank_Application
         {
             Console.Clear();
             Console.Write("Enter account to transfer from: \n\n");
-            accoutToTranferFrom = Console.ReadLine();
+            var accoutToTranferFrom = Console.ReadLine();
             var accountFrom = CreateAccount.accounts.FirstOrDefault(x => x.AccountNo == accoutToTranferFrom);
             
             Console.Write("Enter account to transfer to: \n\n");
-            accountToTranferTo = Console.ReadLine();
+            var accountToTranferTo = Console.ReadLine();
             Accounts accountTo = accounts.Where(x => x.AccountNo == accountToTranferTo).FirstOrDefault();
 
             Console.Write("Enter amount to transfer: ");
-            transferAmount = decimal.Parse(Console.ReadLine());
+            var transferAmount = decimal.Parse(Console.ReadLine());
 
             if (accountFrom != null && accountTo != null && transferAmount > 0)
             { 

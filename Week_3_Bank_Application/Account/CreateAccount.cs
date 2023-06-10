@@ -6,14 +6,14 @@ using System.Text;
 using System.Threading.Tasks;
 using Week_3_Bank_Application.Account;
 using Bank_Application.User;
+using Week_3_Bank_Application.User;
 
 namespace Bank_Application.Account
 {
-    public class CreateAccount
+    public class CreateAccount  
     {
         string option { get; set; }
-        string accountType = "";
-        int accNo = 0;
+        int accNo { get; set; }
         public static List<Accounts> accounts = new List<Accounts>();
 
 
@@ -39,7 +39,8 @@ namespace Bank_Application.Account
                 {
                     AccountBal = 1000,
                     AccountNo = result,
-                    accountType = AccountType.savings
+                    accountType = AccountType.savings,
+                    fullName = Customer.FirstName + " " + Customer.LastName,
                 };
                 accounts.Add(account);
                 Console.WriteLine("\nSavings Account created successfully");
@@ -60,7 +61,8 @@ namespace Bank_Application.Account
                 {
                     AccountBal = 0,
                     AccountNo = result,
-                    accountType = AccountType.current
+                    accountType = AccountType.current,
+                    fullName = Customer.FirstName + " " + Customer.LastName,
                 };
                 accounts.Add(account);
                 Console.WriteLine("\nCurrent Account created successfully"); 

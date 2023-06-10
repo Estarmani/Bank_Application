@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Bank_Application.Account;
+using Week_3_Bank_Application.Account_Information;
 using Week_3_Bank_Application.User;
 
 namespace Bank_Application.User
@@ -47,14 +48,16 @@ namespace Bank_Application.User
             }
             else if (option == "6")
             {
-
+                PrintTable printDetail = new PrintTable();
+                printDetail.AccountDetailsTable();
             }
             else if (option == "7")
             {
-
+                
             }
             else if (option == "8")
             {
+                Console.Clear();
                 var logout = new Userlogout();
                 logout.LogOutUser();
             }

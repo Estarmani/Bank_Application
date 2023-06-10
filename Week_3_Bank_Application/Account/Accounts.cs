@@ -12,6 +12,7 @@ namespace Week_3_Bank_Application.Account
         public  AccountType accountType{ get; set; }
         public string AccountNo { get; set; }
         public decimal AccountBal { get; set;}
+        public string fullName { get; set;}
  
      
     }

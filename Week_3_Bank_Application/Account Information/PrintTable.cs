@@ -1,4 +1,5 @@
-﻿using Bank_Application.User;
+﻿using Bank_Application.Account;
+using Bank_Application.User;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,14 +9,15 @@ using Week_3_Bank_Application.Account;
 
 namespace Week_3_Bank_Application.Account_Information
 {
-    internal class PrintTable
+    internal class PrintTable : Accounts
     {
         public void AccountDetailsTable()
         {
+            Console.Clear();
             Console.WriteLine("\n\n\t|------------------|--------------------|---------------|--------------------|");
             Console.WriteLine("\t|   FULLNAME       |   ACCOUNT NUMBER   |  ACCOUNT TYPE |  ACCOUNT BALANCE   |");
             Console.WriteLine("\t|------------------|--------------------|---------------|--------------------|");
-            Console.WriteLine();
+            Console.Write($"\t{ AccountDetails()}");
             Console.WriteLine("\t|------------------|--------------------|---------------|--------------------|");
 
             var menu = new Menu();
@@ -29,6 +31,17 @@ namespace Week_3_Bank_Application.Account_Information
             Console.WriteLine("\t|------------------|--------------------|---------------|--------------------|");
             Console.WriteLine();
             Console.WriteLine("\t|------------------|--------------------|---------------|--------------------|");
+        } 
+        
+        public string AccountDetails()
+        {
+            string printdetails = "";
+
+            foreach (Accounts acc in CreateAccount.accounts)
+            {
+                printdetails = $"|  {acc.fullName, -14}  |  {acc.AccountNo, -16}  |  {acc.accountType, -11}  |  {acc.AccountBal, -17} |\n";
+            }
+            return printdetails;
         }
     }
 }
